@@ -1,0 +1,47 @@
+{
+  "name": "@repo/cli",
+  "version": "0.0.0",
+  "description": "An example CLI tool",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "lint": "eslint --ext .ts",
+    "format:write": "prettier --write .",
+    "format:check": "prettier --check .",
+    "release": "changeset version",
+    "pub:release": "pnpm build && pnpm publish --no-git-checks --access public",
+    "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "type-fest": "^4.10.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2"
+  }
+}
