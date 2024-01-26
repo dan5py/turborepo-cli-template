@@ -45,18 +45,6 @@ pnpm turbo gen workspace --name <app-name> --copy
 
 ### Publish the CLI package
 
-Create a new access token on NPM and add it to your `.env` file:
-
-```sh
-NPM_TOKEN=YOUR_TOKEN
-```
-
-Setup pnpm config:
-
-```sh
-pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-```
-
 Authenticate your machine with NPM:
 
 ```sh
